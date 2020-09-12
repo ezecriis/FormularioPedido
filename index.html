@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario Pedidos</title>
+
+	<!--lee codigo javascript-->
+	<script type="text/javascript" src="js/javascript.js"></script>
+
+	<!--lee codigo css-->
+	<link type="text/css" href="css/style.css" rel="stylesheet" media="screen" />
+</head>
+
+
+<body>
+	<div id="todo" class="todoNo">
+		<div id="menu" class="menuNo">
+
+
+			<!--Producto del 1 al 9-->
+			<div id="div1" name="DIVS"></div>
+			<div id="div2" name="DIVS"></div>
+			<div id="div3" name="DIVS"></div>
+			<div id="div4" name="DIVS"></div>
+			<div id="div5" name="DIVS"></div>
+			<div id="div6" name="DIVS"></div>
+			<div id="div7" name="DIVS"></div>
+			<div id="div8" name="DIVS"></div>
+			<div id="div9" name="DIVS"></div>
+
+
+			<!--Botones de compra-->
+			<div id="divbotones">
+				<input type="button" id="botonTotal" value="Calcular total" />
+				<input type="button" id="botonDatos" value="Datos personales" disabled="disabled" />
+				<input type="button" id="botonPago" value="Pago" disabled="disabled" />
+				<input type="button" id="botonConfirmar" value="Confirmar envio" disabled="disabled" />
+			</div>
+
+
+			<!--zona de compra, tablas, formularios, etc.-->
+			<div id="divZonaCompra" class="divZonaCompraNo">
+
+
+				<!--Carrito de compra-->
+				<div id="divTotal" class="divsNo">
+					<p><b>Carrito de compra, si quiere hacer alguna modificacion aun esta a tiempo:</b></p>
+					<table id="tablaTotal"></table>
+				</div>
+
+
+				<!--Datos personales-->
+				<div id="divDatos" class="divsNo">
+					<p><b>Introduzca los datos de quien recibira el pedido:</b></p>
+
+					<div id="divDatosPersonales0">
+						<div id="divDatosPersonales1">
+							<label>Nombre completo:</label><br />
+							<input type="text" id="nombre" value="" size="26" /><br />
+
+
+							<label>DNI:</label><br />
+							<input type="text" id="dni" value="" size="8" maxlength="9" /><br />
+
+
+							<label>Fecha de entrega:</label><br />
+							<select id="fechaEntrega">
+								<option value="">&nbsp;dia&nbsp;</option>
+							</select>
+							<select id="fechaEntregaMes">
+								<option value="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mes</option>
+								<option value="1">Septiembre</option>
+								<option value="2">Octubre</option>
+								<option value="3">Noviembre</option>
+								<option value="4">Diciembre</option>
+								<option value="5">Enero</option>
+								<option value="6">Febrero</option>
+							</select>
+							<select id="fechaEntregaAnio">
+								<option value="">&nbsp;&nbsp;año&nbsp;</option>
+							</select><br />
+						</div>
+
+						<div id="divDatosPersonales2">
+							<label>Tel:</label><br />
+							<input type="text" id="movil" value="" size="8" maxlength="10" /><br />
+
+							<label>Email:</label><br />
+							<input type="text" id="email1" value="" size="25" /><br />
+
+							<label>Repita el email:</label><br />
+							<input type="text" id="email2" value="" size="25" />
+						</div>
+					</div>
+
+
+					<div id="divDomicilio">
+						<label>Tipo de via:</label>
+						<select id="tipoDeVia">
+							<option value="Avenida">Avenida</option>
+							<option value="Calle" selected="selected">Calle</option>
+							<option value="Camino">Camino</option>
+							<option value="Carretera">Carretera</option>
+						</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<label>Calle:</label>
+						<input type="text" id="calleNombre" value="" size="20" /><br />
+
+						<label>Piso:</label>
+						<input type="text" id="callePiso" value="" size="2" /><br />
+
+
+						<label>Localidad:</label>
+						<input type="text" id="localidad" value="" size="13" />&nbsp;&nbsp;
+
+						<label>Codigo Postal:</label>
+						<input type="text" id="codigoPostal" value="" size="5" maxlength="5" />&nbsp;&nbsp;
+
+					</div>
+
+					<div>
+						<br>
+						<textarea name="mensaje" rows="5" placeholder="Puede dejar un comentario si quiere"></textarea>
+						<div class="validate"></div>
+					</div>
+
+				</div>
+
+				<!--Se pude agregar la funcion de pago-->
+				<!--Datos de pago-->
+				<div id="divPago" class="divsNo">
+					<p><b>Introduzca los datos de la tarjeta de credito/debito donde se cargara el cobro:</b></p>
+
+
+					<label>Titular de la tarjeta:</label><br />
+					<input type="text" id="titular" value="" size="26" /><br />
+
+
+					<div id="metodosDePago">
+						<label><span id="alertTipoDeTarjeta">Tipo de tarjeta:</span></label><br />
+						<label for="visa">
+							<input type="radio" id="visa" name="tarjetas" class="logoTarjetas" value="Visa">
+							<img src="img/pago/visa.gif"></img>
+						</label>
+
+						<label for="masterCard">
+							<input type="radio" id="masterCard" name="tarjetas" class="logoTarjetas" value="MasterCard">
+							<img src="img/pago/mastercard.gif"></img>
+						</label>
+
+						<label for="amex">
+							<input type="radio" id="amex" name="tarjetas" class="logoTarjetas" value="American Express">
+							<img src="img/pago/amex.gif"></img>
+						</label>
+
+						<label for="aurora">
+							<input type="radio" id="aurora" name="tarjetas" class="logoTarjetas" value="Aurora">
+							<img src="img/pago/aurora.gif"></img>
+						</label>
+
+					</div>
+
+
+					<div id="divNumeroTarjeta">
+						<label>Numero tarjeta y CVC:</label><br />
+						<input type="text" id="numeroTarjeta" value="" size="15" maxlength="16" />
+						<input type="text" id="cvcTarjeta" value="" size="2" maxlength="3" /><br />
+
+
+						<select id="mesTarjeta">
+							<option value="">&nbsp;&nbsp;mes&nbsp;</option>
+						</select>
+
+						<select id="anioTarjeta">
+							<option value="">&nbsp;&nbsp;año&nbsp;</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="pie"> © Copyright <a href="https://www.linkedin.com/in/cristian-ledesma-452137162/" target="_black">
+		Cristian Ledesma</a>
+	</p>
+</body>
+
+</html>
